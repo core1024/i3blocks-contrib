@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+
+case "$BLOCK_BUTTON" in
+    1|4)
+		xkblayout-state set +1
+		;;
+    3|5)
+		xkblayout-state set -1
+		;;
+esac
+
+xkblayout-state print %s | tr a-z A-Z
