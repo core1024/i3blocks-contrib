@@ -21,4 +21,4 @@ elif [[ "${BLOCK_BUTTON}" -eq 6 ]];then
 	mocp -k -5
 fi
 
-mocp -Q '%state %artist - %song - %ct' 2>/dev/null || echo STOP
+(mocp -Q '%state %artist - %song - %ct' 2>/dev/null || echo) | sed -e 's/PLAY//' -e 's/PAUSE//' -e 's/STOP//' -e 's/^$/MOC/'
