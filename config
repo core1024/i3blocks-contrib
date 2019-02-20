@@ -37,26 +37,17 @@ interval=1
 #interval=5
 #signal=10
 
-[arch-update]
-interval=3600
-markup=pango
-label=
+#[arch-update]
+#interval=3600
+#markup=pango
+#label=
 #label=Updates:
 
-# Memory usage
-#
-# The type defaults to "mem" if the instance is not specified.
-[memory]
-label=MEM
-separator=false
-interval=30
-min_width=MEM 99.9/99.9G (100%)
-
-[memory]
-label=SWAP
-instance=swap
-interval=30
-min_width=SWAP 99.9/99.9G (100%)
+#[memory]
+#label=SWAP
+#instance=swap
+#interval=30
+#min_width=SWAP 99.9/99.9G (100%)
 
 # Disk usage
 #
@@ -64,8 +55,8 @@ min_width=SWAP 99.9/99.9G (100%)
 # The script may be called with a optional argument to set the alert
 # (defaults to 10 for 10%).
 [disk]
-label=
-#instance=/mnt/data
+label=FS
+instance=/
 interval=30
 
 # Network interface monitoring
@@ -89,18 +80,27 @@ label=直
 instance=wlp3s0b1
 interval=10
 
+# Memory usage
+#
+# The type defaults to "mem" if the instance is not specified.
+[memory]
+label=MEM
+separator=false
+interval=30
+min_width=MEM 99.9/99.9G (100%)
+
 # CPU usage
 #
 # The script may be called with -w and -c switches to specify thresholds,
 # see the script for details.
 [cpu_usage]
-label=
+label=CPU
 interval=10
 min_width= 100.00%
 separator=false
 
 [load_average]
-label=猪
+label=LOAD
 interval=10
 
 # Volume indicator
@@ -110,8 +110,7 @@ interval=10
 # See the script for details.
 
 [volume]
-label=♪
-#label=VOL
+label=VOL
 instance=Master
 #instance=PCM
 interval=once
@@ -133,44 +132,6 @@ separator=false
 command=date '+%H:%M'
 interval=10
 
-# Generic media player support
-#
-# This displays "ARTIST - SONG" if a music is playing.
-# Supported players are: spotify, vlc, audacious, xmms2, mplayer, and others.
-#[mediaplayer]
-#instance=spotify
-#interval=5
-#signal=10
-
-# OpenVPN support
-#
-# Support multiple VPN, with colors.
-#[openvpn]
-#interval=20
-
-# Temperature
-#
-# Support multiple chips, though lm-sensors.
-# The script may be called with -w and -c switches to specify thresholds,
-# see the script for details.
-#[temperature]
-#label=TEMP
-#interval=10
-
-# Key indicators
-#
-# Add the following bindings to i3 config file:
-#
-# bindsym --release Caps_Lock exec pkill -SIGRTMIN+11 i3blocks
-# bindsym --release Num_Lock  exec pkill -SIGRTMIN+11 i3blocks
-#[keyindicator]
-#KEY=CAPS
-#markup=pango
-#interval=once
-#signal=11
-
-#[keyindicator]
-#KEY=NUM
-#markup=pango
-#interval=once
-#signal=11
+#[calendar]
+#interval=1
+#label= 
